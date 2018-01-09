@@ -2,7 +2,7 @@
 
 import Rect from './Rect';
 
-export {Rect};
+export { Rect };
 
 export class Transform {
   constructor(scale, translateX, translateY, pivot) {
@@ -36,7 +36,7 @@ function isValidTransform(transform) {
   return false;
 }
 
-export function fitCenterRect(contentAspectRatio, containerRect:Rect) {
+export function fitCenterRect(contentAspectRatio, containerRect: Rect) {
   let w = containerRect.width();
   let h = containerRect.height();
   let viewAspectRatio = w / h;
@@ -63,7 +63,7 @@ export function fitCenterRect(contentAspectRatio, containerRect:Rect) {
  * @param transform
  * @returns {*}
  */
-export function transformedRect(rect:Rect, transform:Transform) {
+export function transformedRect(rect: Rect, transform: Transform) {
   if (!isValidRect(rect)) {
     throw new Error('transformedRect...invalid rect');
   }
@@ -127,7 +127,7 @@ export function getTransform(fromRect, toRect) {
  * @param viewPortRect
  * @returns {*|{line, column}|{column, line}|{x}}
  */
-export function alignedRect(rect:Rect, viewPortRect:Rect) {
+export function alignedRect(rect: Rect, viewPortRect: Rect) {
   let dx = 0, dy = 0;
 
   if (rect.width() > viewPortRect.width()) {
